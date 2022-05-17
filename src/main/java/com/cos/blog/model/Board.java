@@ -30,9 +30,9 @@ public class Board {
     @ColumnDefault("0")
     private int count;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne
     @JoinColumn(name="userId")
-    private User userId;
+    private User user;
 
     @OneToMany(mappedBy = "board", fetch = FetchType.EAGER) //FK 아님 (DB에 컬럼을 만들지 않음)
     private List<Reply> reply;
